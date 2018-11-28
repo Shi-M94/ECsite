@@ -39,6 +39,7 @@
 	margin:30px auto;
 	border:1px solid #333;
 	text-align: center;
+	padding: 5px auto;
 	}
 
 	#top p{
@@ -68,12 +69,39 @@
 	clear:both;
 	}
 
-	#text-center {
-	border:1px solid gray;
+	#text-center-right,#text-center-left {
+	position:relative;
+	border:1px solid lightgray;
 	display: inline-block;
 	text-align: center;
 	padding: 0px 15px 5px 15px;
 	margin: 0px 10px ;
+	background-color:lightgray;
+	}
+
+	#text-center-right :before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left:100%;
+	border: 10px solid transparent;
+	border-left: 10px solid lightgray;
+	}
+
+	#text-center-left :before {
+	content: "";
+	position: absolute;
+	top: 50%;
+	left:-18%;
+	border: 10px solid transparent;
+	border-right: 10px solid lightgray;
+	}
+
+	.button {
+	background-color: white;
+	border-style: none;
+	border-right: 2px solid gray;
+	border-bottom: 2px solid gray;
 	}
 
 
@@ -89,31 +117,31 @@
 
 	<div id="main">
 		<div id="top">
-			<img src = "リスのアイコンですたい。.jpeg"/>
 			<p>Admin</p>
 		</div>
 
-		<div id="text-center">
+
+		<img src = "リスのアイコンですたい右向きjpg.jpg"/><div id="text-center-left">
 		<p>商品</p>
 			<s:form action="ItemCreateAction">
-				<s:submit value="新規登録"/>
+				<s:submit value="新規登録" class="button"/>
 			</s:form>
 			<br>
 			<s:form action="ItemListAction">
-				<s:submit value="一覧"/>
+				<s:submit value="一覧" class="button"/>
 			</s:form>
 		</div>
 
-		<div id="text-center">
+		<div id="text-center-right">
 		<p>ユーザー</p>
 			<s:form action="UserCreateAction">
-				<s:submit value="新規登録"/>
+				<s:submit value="新規登録" class="button"/>
 			</s:form>
 			<br>
 			<s:form action="UserListAction">
-				<s:submit value="一覧"/>
+				<s:submit value="一覧" class="button"/>
 			</s:form>
-		</div>
+		</div><img src = "リスのアイコンですたい。.jpeg"/>
 		<div id="text-right">
 
 					<p>Home画面へ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></p>
